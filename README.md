@@ -1,6 +1,22 @@
-# Proiect SAT Solver Comparativ
+# Rezolvarea unei probleme SAT cu algoritmul QEPS în comparație cu un algoritm de backtacking
 ## Scopul Proiectului
-Scopul acestui proiect este de a evalua și compara performanța a două metode diferite de rezolvare a problemelor SAT (Satisfiability Problem): algoritmul QEPS (Quantum-inspired Evolutionary P Systems) și un algoritm clasic de backtracking. Proiectul include generarea unui exemplu mare de problemă SAT pentru a testa și demonstra diferențele de performanță între aceste două abordări.
+Scopul acestui proiect este de a evalua și compara performanța a două metode diferite de rezolvare a problemelor SAT (Satisfiability Problem): algoritmul QEPS (Quantum-inspired Evolutionary P Systems) și un algoritm clasic de backtracking. Proiectul include generarea unui exemplu voluminos de problemă SAT pentru a testa și demonstra diferențele de performanță între aceste două abordări.
+
+## Problemei SAT aleasă
+Problema de satisfacție booleană (SAT) este una dintre cele mai cunoscute probleme în informatică. În acest proiect este abordat un exemplu simplu de problemă SAT. Punctul de pornire este o formulă logică compusă din mai multe variabile booleene. Forma normală conjunctivă (CNF) este o formă în care formula este exprimată ca un AND de clauze, fiecare clauză fiind un OR de literali (o variabilă sau negația ei).
+
+Exemplu de formulă CNF: _(x<sub>1</sub> || not(x<sub>2</sub>)) && (not(x<sub>1</sub>) || x<sub>3</sub>)_
+
+Această formulă conține trei variabile și două clauze:
+* Variabilele sunt _x<sub>1</sub>_, _x<sub>2</sub>_ și _x<sub>3</sub>_.
+* Prima clauză este _x<sub>1</sub> || not(x<sub>2</sub>)_, care este adevărată dacă _x<sub>1</sub>_ este adevărat sau dacă _x<sub>2</sub>_ este fals.
+* A doua clauză este _not(x<sub>1</sub>) || x<sub>3</sub>_, care este adevărată dacă _x<sub>1</sub>_ este fals sau dacă _x<sub>3</sub>_ este adevărat.
+
+Scopul este acela de a găsi valori pentru variabile astfel încât întreaga formulă să fie evaluată ca adevărată.
+
+O soluție posibilă este:
+* _x<sub>1</sub>_ = True ; _x<sub>2</sub>_ = False ; _x<sub>3</sub>_ = True
+* (True || not(False)) && (not(True) || True) = (True || True) && (False || True) = True && True = True
 
 ## Algoritmul QEPS
 Algoritmul QEPS este un sistem evolutiv inspirat de quantum computing și P sisteme. Acesta utilizează structuri de membrane pentru a executa operațiuni în paralel și pentru a explora spațiul de soluții. QEPS încearcă să găsească soluții satisfăcătoare prin adaptarea și evoluția soluțiilor candidate, bazându-se pe principii ale teoriei cuantice pentru a optimiza procesul de căutare.
